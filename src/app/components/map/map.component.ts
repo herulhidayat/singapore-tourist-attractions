@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { SidebarService } from '../../services/sidebar.service'
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-map',
+  templateUrl: './map.component.html',
+  styleUrls: ['./map.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class MapComponent implements OnInit {
   isActive: boolean = false;
   constructor(public sidebarService: SidebarService) { }
 
@@ -14,6 +14,5 @@ export class NavbarComponent implements OnInit {
     this.sidebarService.isActive.subscribe((isActive) => {
       this.isActive = isActive;
     });
-    console.log("aaa",this.isActive)
   }
 }

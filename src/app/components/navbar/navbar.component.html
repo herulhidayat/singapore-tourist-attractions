@@ -1,4 +1,4 @@
-<nav class="fixed flex pl-96 flex-row-reverse w-full top-0 z-10" id="nav">
+<nav class="fixed flex flex-row-reverse w-full top-0 z-10" id="nav" [ngClass]="{'pl-96':isActive,'pl-28':!isActive}">
     <div class="bg-[#F4F8FBFF] h-16 w-screen flex items-center justify-between px-8 py-2">
         <span class="font-bold text-lg">TOP-RATED TOURIST ATTRACTIONS IN SINGAPORE</span>
         <div class="flex flex-row items-center">

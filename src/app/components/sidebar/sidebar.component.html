@@ -1,7 +1,7 @@
-<aside class="w-full h-screen  fixed w-96 top-0 z-10 max-h-screen flex flex-row font-roboto">
+<aside class="w-full h-screen fixed top-0 z-10 max-h-screen flex flex-row font-roboto">
     <div class="bg-[#313541] w-28 flex flex-col text-sm divide-y divide-[#282C37ff]">
-        <div class="h-20 flex items-center justify-center py-[20px] text-white bg-[#72CDD2]" id="browse" value="false">
-            <button onclick="setActive(this)" class="flex flex-col items-center justify-between">
+        <div [ngClass]="{'text-white bg-[#72CDD2]':sidebarService.isActive.value, 'text-[#8297A0ff]':!sidebarService.isActive.value}" id="browse" value="false" class="h-20 flex items-center justify-center py-[20px]">
+            <button (click)="setActive()" [class.active]="sidebarService.isActive" class="flex flex-col items-center justify-between">
                 <img src="../../../assets/images/browse-icon.svg" alt="browse" style="height: 30px;" class="mb-[5px]">
                 <span>Browse</span>
             </button>
@@ -31,7 +31,7 @@
             </a>
         </div>
     </div>
-    <div class="bg-[#282C37] w-[272px] flex flex-col text-sm divide-y divide-[#20242B] overflow-auto px-4" id="browse-menu">
+    <div [ngClass]="{'bg-[#282C37] w-[272px] flex flex-col text-sm divide-y divide-[#20242B] overflow-auto px-4':sidebarService.isActive.value,'hidden':!sidebarService.isActive.value}" id="browse-menu">
         <div class="flex justify-center">
             <select id="countries" class="m-2 w-auto p-1 border border-[#313541] text-sm rounded-lg block bg-transparent placeholder-gray-400 text-[#8297A0ff] focus:ring-grey-500 focus:border-grey-500">
                 <option selected>Filter</option>
