@@ -11,6 +11,7 @@ import { SidebarService } from '../../services/sidebar.service'
 export class SidebarComponent implements OnInit{
   li:any;
   lis=[];
+  data = [];
 
   constructor(public sidebarService: SidebarService, private http : HttpClient, public dataService: DataService) {
   }
@@ -30,11 +31,12 @@ export class SidebarComponent implements OnInit{
       this.lis=this.li;
       this.dataService.sendData(this.lis);
     });
+
     function hideloader(){
         const loadingElement = document.getElementById('loading')
         if (loadingElement){
             loadingElement.style.display = 'none';
         }
     }
-}
+  }
 }

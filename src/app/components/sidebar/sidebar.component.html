@@ -39,80 +39,8 @@
                 <option value="CA">By Favorite</option>
             </select>
         </div>
-        <div class="flex items-center pl-5 text-white py-[15px]">
-            <a href="">Merlion</a>
-        </div>
-        <li class="flex flex-col pl-5 pr-5 transition duration-75 group  text-white py-[15px]">
-            <div id="marina" value="false">
-                <button onclick="setOpen1(this)" class="flex justify-between items-center w-full">
-                    <span>Marina Bay Sands</span>
-                    <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </button>
-            </div>
-            <ul id="dropdown1" class="py-2 space-y-2 hidden">
-                <li>
-                    <a href="#" class="flex p-2 w-full rounded-lg transition duration-75 group text-[#8297A0ff]">ArtScience Museum</a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 w-full rounded-lg transition duration-75 group text-[#8297A0ff]">Marina Bay Sands Skypark</a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 w-full rounded-lg transition duration-75 group text-[#8297A0ff]">Double Helix Bridge</a>
-                </li>
-            </ul>
-        </li>
-        <li class="flex flex-col pl-5 pr-5 transition duration-75 group  text-white py-[15px]">
-            <div id="garden" value="false">
-                <button onclick="setOpen2(this)" class="flex justify-between items-center w-full">
-                    <span>Garden by the Bay</span>
-                    <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </button>
-            </div>
-            <ul id="dropdown2" class="py-2 space-y-2 hidden">
-                <li>
-                    <a href="#" class="flex p-2 w-full rounded-lg transition duration-75 group text-[#8297A0ff]">ArtScience Museum</a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 w-full rounded-lg transition duration-75 group text-[#8297A0ff]">Marina Bay Sands Skypark</a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 w-full rounded-lg transition duration-75 group text-[#8297A0ff]">Double Helix Bridge</a>
-                </li>
-            </ul>
-        </li>
-        <li class="flex flex-col pl-5 pr-5 transition duration-75 group  text-white py-[15px]">
-            <div id="china" value="false">
-                <button onclick="setOpen3(this)" class="flex justify-between items-center w-full">
-                    <span>China Town</span>
-                    <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </button>
-            </div>
-            <ul id="dropdown3" class="py-2 space-y-2 hidden">
-                <li>
-                    <a href="#" class="flex p-2 w-full rounded-lg transition duration-75 group text-[#8297A0ff]">ArtScience Museum</a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 w-full rounded-lg transition duration-75 group text-[#8297A0ff]">Marina Bay Sands Skypark</a>
-                </li>
-                <li>
-                    <a href="#" class="flex p-2 w-full rounded-lg transition duration-75 group text-[#8297A0ff]">Double Helix Bridge</a>
-                </li>
-            </ul>
-        </li>
-        <div class="flex items-center pl-5 text-white py-[15px]">
-            <a href="">Asian Civilitation Museum</a>
-        </div>
-        <div class="flex items-center pl-5 text-white py-[15px]">
-            <a href="">Clarke Quay</a>
-        </div>
-        <div class="flex items-center pl-5 text-white py-[15px]">
-            <a href="">Fort Canning Park</a>
-        </div>
-        <div class="flex items-center pl-5 text-white py-[15px]">
-            <a href="">Singapore Flyer</a>
-        </div>
-        <div class="flex items-center pl-5 text-white py-[15px]">
-            <a href="">Orchard Road</a>
+        <div *ngFor="let item of li" class="flex items-center pl-5 text-white py-[15px]">
+            <a href="">{{item.name}}</a>
         </div>
     </div>
 </aside>
