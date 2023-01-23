@@ -2,7 +2,8 @@
     <div class="bg-[#313541] w-28 flex flex-col text-sm divide-y divide-[#282C37ff]">
         <div [ngClass]="{'text-white bg-[#72CDD2]':sidebarService.isActive.value, 'text-[#8297A0ff]':!sidebarService.isActive.value}" id="browse" value="false" class="h-20 flex items-center justify-center py-[20px]">
             <button (click)="setActive()" [class.active]="sidebarService.isActive" class="flex flex-col items-center justify-between">
-                <img src="../../../assets/images/browse-icon.svg" alt="browse" style="height: 30px;" class="mb-[5px]">
+                <img *ngIf="sidebarService.isActive.value" src="../../../assets/images/browse-icon-active.svg" alt="browse" style="height: 30px;" class="mb-[5px]">
+                <img *ngIf="!sidebarService.isActive.value" src="../../../assets/images/browse-icon.svg" alt="browse" style="height: 30px;" class="mb-[5px]">
                 <span>Browse</span>
             </button>
         </div>
