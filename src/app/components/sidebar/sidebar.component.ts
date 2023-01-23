@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 import { SidebarService } from '../../services/sidebar.service'
 
 @Component({
@@ -6,12 +8,33 @@ import { SidebarService } from '../../services/sidebar.service'
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
 })
-export class SidebarComponent {
-  constructor(public sidebarService: SidebarService) {
-    console.log('SidebarService is instantiated');
+export class SidebarComponent implements OnInit{
+  li:any;
+  lis=[];
+
+  constructor(public sidebarService: SidebarService, private http : HttpClient, public dataService: DataService) {
   }
 
   setActive() {
     this.sidebarService.setActive(!this.sidebarService.isActive.value);
   }
+
+  ngOnInit(): void {
+    this.http.get('https://my-json-server.typicode.com/herulhidayat/sg-attractions-db/attractions')
+    .subscribe(Response => {
+      if(Response){ 
+        hideloader();
+      }
+      console.log(Response)
+      this.li=Response;
+      this.lis=this.li;
+      this.dataService.sendData(this.lis);
+    });
+    function hideloader(){
+        const loadingElement = document.getElementById('loading')
+        if (loadingElement){
+            loadingElement.style.display = 'none';
+        }
+    }
+}
 }
