@@ -1,0 +1,8 @@
+.leaflet-popup-content-wrapper{
+    background-color: #83d63e;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+}
+.leaflet-popup-tip {
+    background: #83d63e;
+}
